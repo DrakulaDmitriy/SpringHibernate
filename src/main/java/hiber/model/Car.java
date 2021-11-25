@@ -1,8 +1,16 @@
 package hiber.model;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
 import javax.persistence.*;
 
 @Entity
+@Getter @Setter
+@ToString
+@NoArgsConstructor
 @Table(name = "cars")
 public class Car {
 
@@ -16,46 +24,8 @@ public class Car {
     @Column(name = "series")
     private int series;
 
-    public Car() {
-
-    }
-
     public Car(String model, int serias) {
         this.model = model;
         this.series = serias;
     }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getModel() {
-        return model;
-    }
-
-    public void setModel(String model) {
-        this.model = model;
-    }
-
-    public int getSeries() {
-        return series;
-    }
-
-    public void setSeries(int serias) {
-        this.series = serias;
-    }
-
-    @Override
-    public String toString() {
-        return "Car{" +
-                "id=" + id +
-                ", model='" + model + '\'' +
-                ", serias=" + series +
-                '}';
-    }
-
 }
